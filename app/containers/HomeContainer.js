@@ -4,7 +4,7 @@ import { HomeScreen } from '../components/HomeScreen';
 
 const mapStateToProps = (state, props) => {
     return {
-      loading: state.spaceReducer.loading,
+      loading: state.searchReducer.loading,
       searchTerm: state.searchReducer.searchTerm
     }
 };
