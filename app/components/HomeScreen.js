@@ -13,9 +13,9 @@ import {
 
 export default class HomeScreen extends React.Component {
 
-  static navigationOptions = {
-    title: 'Home'
-  }
+  static navigationOptions = ({
+    title: 'Space Search'
+  })
 
   render() {
     return (
@@ -36,7 +36,8 @@ export default class HomeScreen extends React.Component {
           onPress={() => {
             this.props.fetchSpaceImages(this.props.searchTerm);
             this.props.navigation.navigate('SearchResults', {
-              searchTitle: this._makeSearchTitleParam()
+              searchTitle: this._makeSearchTitleParam(),
+              navigation: this.props.navigation.navigate
             })
           }}
         />

@@ -6,14 +6,25 @@ import {
   View,
   Text,
   Image,
+  Button
 } from 'react-native';
 
 
 export default class DetailsScreen extends React.Component {
 
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => {
+    const { params } = navigation.state;
+    const button =
+      <Button
+        onPress={() => params.navigation('Home')}
+        title='Home'
+        color='#fff'
+      />
+    return {
       title: 'Details',
-  }
+      headerRight: params ? button : ''
+    }
+  };
 
   render() {
     
