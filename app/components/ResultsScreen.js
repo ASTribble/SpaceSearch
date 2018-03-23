@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 
-export class ResultsScreen extends React.Component {
+export default class ResultsScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};

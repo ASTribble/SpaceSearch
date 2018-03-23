@@ -1,19 +1,20 @@
-import { StackNavigator } from 'react-navigation'
-
-import * as Containers from './app/containers'
-
+import React from 'react';
+import { StackNavigator } from 'react-navigation';
+import {Button} from 'react-native';
+import ResultsContainer from './containers/ResultsContainer';
+import HomeContainer from './containers/HomeContainer';
 
 export const App = StackNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: HomeContainer,
     },
     SearchResults: {
-      screen: SearchResultsScreen,
+      screen: ResultsContainer,
     },
-    Details: {
-      screen: DetailsScreen
-    }
+    // Details: {
+    //   screen: DetailsContainer
+    // }
   },    
   {
     initialRouteName: 'Home',

@@ -10,20 +10,20 @@ export const setSearchTerm = (text) => ({
 
 //========== Async Call Support ========================
 
-export const FETCH_SPACE_REQUEST = 'SPACE_REQUEST';
-export const fetchSpaceRequest = () => ({
-  type: SPACE_REQUEST
+export const SEARCH_SPACE_REQUEST = 'SEARCH_SPACE_REQUEST';
+export const searchSpaceRequest = () => ({
+  type: SEARCH_SPACE_REQUEST
 });
 
-export const FETCH_SPACE_SUCCESS = 'FETCH_SPACE_SUCCESS';
-export const fetchSpaceSuccess = (spaceItems) => ({
-  type: FETCH_SPACE_SUCCESS,
+export const SEARCH_SPACE_SUCCESS = 'SEARCH_SPACE_SUCCESS';
+export const searchSpaceSuccess = (spaceItems) => ({
+  type: SEARCH_SPACE_SUCCESS,
   spaceItems
 });
 
-export const FETCH_SPACE_ERROR = 'FETCH_SPACE_SUCCESS';
-export const fetchSpaceError = (err) => ({
-  type: FETCH_SPACE_ERROR,
+export const SEARCH_SPACE_ERROR = 'SEARCH_SPACE_SUCCESS';
+export const searchSpaceError = (err) => ({
+  type: SEARCH_SPACE_ERROR,
   err
 });
 
@@ -38,7 +38,7 @@ const convertSearchTerm = searchTerm => {
 
 
 export const fetchSpaceImages = searchTerm => dispatch => {
-  dispatch(fetchSpaceRequest);
+  dispatch(searchSpaceRequest);
   return fetch(`https://images-api.nasa.gov/search?media_type=image&q=${convertSearchTerm(searchTerm)}`)
     .then(res => {
       if (!res.ok) {
@@ -49,7 +49,7 @@ export const fetchSpaceImages = searchTerm => dispatch => {
     .then(res => {
       const spaceItems = res.collection.items;
       console.log(spaceItems);
-      return dispatch(fetchSpaceSuccess(spaceItems));
+      return dispatch(searchSpaceSuccess(spaceItems));
     })
-    .catch(err => dispatch(fetchSpaceError(err)));
+    .catch(err => dispatch(searchSpaceError(err)));
 };

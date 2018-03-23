@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
+import {withNavigation} from 'react-navigation';
+import {bindActionCreators} from 'redux';
 
-import { ResultsScreen } from '../components/ResultsScreen';
+import ResultsScreen from '../components/ResultsScreen';
 import * as Actions from '../actions/index';
 
 
