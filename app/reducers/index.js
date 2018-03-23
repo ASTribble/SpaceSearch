@@ -25,7 +25,7 @@ const searchReducer = (state = searchState, action) => {
       return {...state, detailedItem: action.item}
 
     case SEARCH_SPACE_REQUEST:
-      return { ...state, loading: true };
+      return { ...state, loading: true, searchResults: [], };
 
     case SEARCH_SPACE_SUCCESS:
       const searchResults = action.spaceItems.map(item => ({

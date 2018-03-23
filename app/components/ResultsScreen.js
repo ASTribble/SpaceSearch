@@ -9,7 +9,8 @@ import {
   ActivityIndicator,
   Image,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  Button
 } from 'react-native';
 
 
@@ -20,9 +21,19 @@ export default class ResultsScreen extends React.Component {
     this.renderItem = this.renderItem.bind(this);
   }
 
-  static navigationOptions = {
-    title: 'SearchResults'
-  }
+  static navigationOptions = ({ navigation }) => {
+    const { params } = navigation.state;
+    const button = 
+        <Button
+            onPress={() => params.navigation('Home')}
+            title='Home'
+            color='#fff'
+        />
+    return {
+          title: params ? `${params.searchTitle} Search` : 'Search Results',
+          headerRight: params ? button : ''
+    }
+  };
 
   render(){
     if (this.props.loading) {
@@ -38,7 +49,7 @@ export default class ResultsScreen extends React.Component {
             ref='searchRef'
             data={this.props.searchResults}
             renderItem={this.renderItem}
-            keyExtractor={(item, index) => index}
+            keyExtractor={(item, index) => index.toString()}
           />
         </ScrollView>
       );
@@ -49,7 +60,9 @@ export default class ResultsScreen extends React.Component {
       <View style={styles.row}>
         <TouchableOpacity onPress={() => {
           this.props.setDetailedItem(item);
-          this.props.navigation.navigate('Details');
+          this.props.navigation.navigate('Details', {
+            navigation: this.props.navigation.navigate
+          });
         }}>
         <Text style={styles.title}>
           {(parseInt(index) + 1)}{". "}{item.title}
