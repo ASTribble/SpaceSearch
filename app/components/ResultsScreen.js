@@ -38,7 +38,7 @@ export default class ResultsScreen extends React.Component {
             ref='searchRef'
             data={this.props.searchResults}
             renderItem={this.renderItem}
-            keyExtractor={(item, index) => index}
+            keyExtractor={(item, index) => index.toString()}
           />
         </ScrollView>
       );
