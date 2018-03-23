@@ -23,7 +23,7 @@ export const App = StackNavigator(
       headerStyle: {
         backgroundColor: 'black'
       },
-      headerTintColor: 'pink',
+      headerTintColor: '#fff',
       headerTitleStyle: {
         fontWeight: 'bold',
         color: '#fff'

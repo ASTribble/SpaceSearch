@@ -13,12 +13,8 @@ import {
 
 export default class HomeScreen extends React.Component {
 
-  static navigationOptions = ({ navigation}) => {
-    const params = navigation.state.params || {};
-    return ({
-      title: 'Home',
-      otherParams: 'Finding Perspective'
-    });
+  static navigationOptions = {
+    title: 'Home'
   }
 
   render() {
@@ -40,11 +36,16 @@ export default class HomeScreen extends React.Component {
           onPress={() => {
             this.props.fetchSpaceImages(this.props.searchTerm);
             this.props.navigation.navigate('SearchResults', {
-              subject: 'Search Results',
+              searchTitle: this._makeSearchTitleParam()
             })
           }}
         />
       </View>
     );
+  }
+
+  _makeSearchTitleParam () {
+    const searchTitle = this.props.searchTerm.toLowerCase().trim();
+    return searchTitle.charAt(0).toUpperCase().concat(searchTitle.slice(1));
   }
 }

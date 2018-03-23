@@ -11,7 +11,8 @@ import * as Actions from '../actions/index';
 const mapStateToProps = (state, props) => {
   return {
     loading: state.searchReducer.loading,
-    searchResults: state.searchReducer.searchResults
+    searchResults: state.searchReducer.searchResults,
+    searchTerm: state.searchReducer.searchTerm
   }
 }
 

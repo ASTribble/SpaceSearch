@@ -11,12 +11,8 @@ import {
 
 export default class DetailsScreen extends React.Component {
 
-  static navigationOptions = ({ navigation }) => {
-    const params = navigation.state.params || {};
-    return ({
+  static navigationOptions = {
       title: 'Details',
-      otherParams: 'Finding Perspective'
-    });
   }
 
   render() {

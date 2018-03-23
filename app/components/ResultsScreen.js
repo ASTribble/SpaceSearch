@@ -20,9 +20,12 @@ export default class ResultsScreen extends React.Component {
     this.renderItem = this.renderItem.bind(this);
   }
 
-  static navigationOptions = {
-    title: 'SearchResults'
-  }
+  static navigationOptions = ({ navigation }) => {
+    const { params } = navigation.state;
+    return {
+      title: params ? `${params.searchTitle} Search` : 'Search Results',
+    }
+  };
 
   render(){
     if (this.props.loading) {
