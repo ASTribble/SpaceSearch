@@ -39,7 +39,8 @@ export const searchSpaceError = (err) => ({
 //================ Async Search Call ======================================
 
 const convertSearchTerm = searchTerm => {
-  return searchTerm.trim().toLowerCase().replace(' ', '%20');
+  return searchTerm.trim().toLowerCase().split('')
+    .map(l => l === ' ' ? '%20' : l).join('');
 }
 
 
