@@ -10,9 +10,9 @@ export const setSearchTerm = (text) => ({
 
 //========== Async Call Support ========================
 
-export const FETCH_SPACE_REQUEST = 'SPACE_REQUEST';
+export const FETCH_SPACE_REQUEST = 'FETCH_SPACE_REQUEST';
 export const fetchSpaceRequest = () => ({
-  type: SPACE_REQUEST
+  type: FETCH_SPACE_REQUEST
 });
 
 export const FETCH_SPACE_SUCCESS = 'FETCH_SPACE_SUCCESS';

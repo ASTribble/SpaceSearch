@@ -11,12 +11,13 @@ import {
 } from 'react-native';
 
 
-class HomeScreen extends React.Component {
+export default class HomeScreen extends React.Component {
 
   static navigationOptions = ({ navigation}) => {
     const params = navigation.state.params || {};
     return ({
-      title: 'Home'
+      title: 'Home',
+      otherParams: 'Finding Perspective'
     });
   }
 
