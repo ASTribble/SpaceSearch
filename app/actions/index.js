@@ -6,7 +6,14 @@ export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
 export const setSearchTerm = (text) => ({
   type: SET_SEARCH_TERM,
   text
-})
+});
+
+export const SET_DETAILED_ITEM = 'SET_DETAILED_ITEM';
+
+export const setDetailedItem = (item) => ({
+  type: SET_DETAILED_ITEM,
+  item
+});
 
 //========== Async Call Support ========================
 
