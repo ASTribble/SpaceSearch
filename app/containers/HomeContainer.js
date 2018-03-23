@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
 import { withNavigation } from 'react-navigation';
 import HomeScreen from '../components/HomeScreen';
 import * as Actions from '../actions/index';
