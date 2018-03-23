@@ -21,13 +21,13 @@ export default class HomeScreen extends React.Component {
     return (
 
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Sometimes, we just need a little perspective...</Text>
+        <Text style={{fontSize: 17, fontWeight: 'bold', marginBottom: 7}}>Sometimes, we just need a little perspective...</Text>
         <Image
           source={{ uri: "https://images-assets.nasa.gov/image/PIA00342/PIA00342~small.jpg" }}
           style={{ height: 450, width: 350 }}
         />
         <TextInput
-          style={{ height: 40, width: 300, borderColor: 'gray', borderWidth: 1, marginTop: 10 }}
+          style={{ height: 40, width: 300, borderColor: 'gray', borderWidth: 1, marginTop: 10, fontSize: 16 }}
           onChangeText={(text) => this.props.setSearchTerm(text)}
           value={this.props.searchTerm}
         />

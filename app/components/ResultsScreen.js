@@ -58,7 +58,7 @@ export default class ResultsScreen extends React.Component {
   renderItem({ item, index }) {
     return (
       <View style={styles.row}>
-        <TouchableOpacity onPress={() => {
+        <TouchableOpacity style={styles.to} onPress={() => {
           this.props.setDetailedItem(item);
           this.props.navigation.navigate('Details', {
             navigation: this.props.navigation.navigate
@@ -85,19 +85,32 @@ const styles = StyleSheet.create({
   },
 
   row: {
+    flex: 1,
+    
+    justifyContent: 'center',
     borderBottomWidth: 1,
     borderColor: '#ccc',
     padding: 10
   },
 
+  to: {
+    flex: 1, 
+    flexDirection: 'row-reverse',
+    alignItems:'center',
+
+  }, 
+
   title: {
-    fontSize: 15,
+    flex: 1,
+    marginLeft: 10,
+    fontSize: 20,
     fontWeight: '600'
   },
 
   thumbnail: { 
-    height: 200, 
-    width: 200 
+    flex: 1,
+    height: 150, 
+    width: 150 
   }
 
 });

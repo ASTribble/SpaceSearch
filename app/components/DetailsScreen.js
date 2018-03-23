@@ -32,14 +32,14 @@ export default class DetailsScreen extends React.Component {
     
     return (
       <ScrollView>
-        <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
           <Image
             source={{ uri: item.thumbnail}}
             style={{ height: 600, width: 420 }}
           />
-          <Text style={{fontSize: 20, fontWeight: 'bold', textAlign: 'center'}}>{item.title.toUpperCase()}</Text>
+          <Text style={{margin: 10, fontSize: 20, fontWeight: 'bold', textAlign: 'center'}}>{item.title.toUpperCase()}</Text>
           <Text style={{fontSize: 18, fontWeight: 'bold'}}>nasa id: {item.nasa_id}</Text>
-          <Text style={{fontSize: 18}}>{item.description}</Text>
+          <Text style={{margin: 10, fontSize: 18}}>{item.description}</Text>
         </View>
       </ScrollView>
     );
