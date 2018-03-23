@@ -45,7 +45,7 @@ const convertSearchTerm = searchTerm => {
 
 
 export const fetchSpaceImages = searchTerm => dispatch => {
-  dispatch(searchSpaceRequest);
+  dispatch(searchSpaceRequest());
   return fetch(`https://images-api.nasa.gov/search?media_type=image&q=${convertSearchTerm(searchTerm)}`)
     .then(res => {
       if (!res.ok) {
