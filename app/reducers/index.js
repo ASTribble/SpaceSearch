@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import {
   SET_SEARCH_TERM,
+  SET_DETAILED_ITEM,
   SEARCH_SPACE_REQUEST,
   SEARCH_SPACE_SUCCESS,
   SEARCH_SPACE_ERROR
@@ -9,6 +10,7 @@ import {
 const searchState = {
   searchResults: [],
   searchTerm: null,
+  detailedItem: null,
   loading: false,
   err: null
 }
@@ -18,6 +20,9 @@ const searchReducer = (state = searchState, action) => {
 
     case SET_SEARCH_TERM:
       return { ...state, searchTerm: action.text };
+    
+    case SET_DETAILED_ITEM:
+      return {...state, detailedItem: action.item}
 
     case SEARCH_SPACE_REQUEST:
       return { ...state, loading: true };

@@ -8,7 +8,8 @@ import {
   Text,
   ActivityIndicator,
   Image,
-  ScrollView
+  ScrollView,
+  TouchableOpacity
 } from 'react-native';
 
 
@@ -46,13 +47,19 @@ export default class ResultsScreen extends React.Component {
   renderItem({ item, index }) {
     return (
       <View style={styles.row}>
+        <TouchableOpacity onPress={() => {
+          this.props.setDetailedItem(item);
+          this.props.navigation.navigate('Details');
+        }}>
         <Text style={styles.title}>
           {(parseInt(index) + 1)}{". "}{item.title}
         </Text>
         <Image source={{ uri: item.thumbnail }} style={styles.thumbnail} />
+        </TouchableOpacity>
       </View>
     );
   }
+  
 };
 
 const styles = StyleSheet.create({

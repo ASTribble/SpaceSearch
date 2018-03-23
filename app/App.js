@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation';
 import {Button} from 'react-native';
 import ResultsContainer from './containers/ResultsContainer';
 import HomeContainer from './containers/HomeContainer';
+import DetailsContainer from './containers/DetailsContainer';
 
 export const App = StackNavigator(
   {
@@ -12,9 +13,9 @@ export const App = StackNavigator(
     SearchResults: {
       screen: ResultsContainer,
     },
-    // Details: {
-    //   screen: DetailsContainer
-    // }
+    Details: {
+      screen: DetailsContainer
+    }
   },    
   {
     initialRouteName: 'Home',
