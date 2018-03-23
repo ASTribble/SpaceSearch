@@ -30,7 +30,7 @@ export default class ResultsScreen extends React.Component {
             color='#fff'
         />
     return {
-          title: params ? `${params.searchTitle} Search` : 'Search Results',
+          title: params ? `${params.searchTitle}` : 'Search Results',
           headerRight: params ? button : ''
     }
   };
